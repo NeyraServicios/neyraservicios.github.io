@@ -1,0 +1,487 @@
+PLAN DE MEJORAS Y FUNCIONALIDADES PARA LA PÁGINA WEB
+IDEA 1 — Validación de números telefónicos de Argentina
+
+Implementar un sistema de validación de números telefónicos en tiempo real que permita registrar teléfonos móviles y fijos de todas las provincias y localidades de Argentina, sin limitarse únicamente a Córdoba.
+
+El sistema deberá reconocer los códigos de área argentinos y aceptar los diferentes formatos nacionales e internacionales. Por ejemplo:
+
+3512345678
+03512345678
++5493512345678
++54 9 351 234-5678
+
+También deberá aceptar los formatos equivalentes de otras localidades del país.
+
+La validación deberá comprobar que el número tenga una estructura compatible con el plan oficial de numeración argentino, incluyendo la cantidad de dígitos y el código de área. Los números inválidos deberán rechazarse, mientras que los incompletos deberán poder seguir escribiéndose sin mostrar errores prematuros.
+
+La validación será automática, sin necesidad de enviar SMS ni realizar llamadas de verificación. Los números válidos deberán normalizarse a un formato uniforme para almacenarlos correctamente en la base de datos.
+
+Importante: validar la estructura de un teléfono no garantiza que el número esté asignado, activo o pertenezca a la persona que lo ingresó. Para comprobarlo se necesitaría una verificación adicional.
+
+IDEA 2 — Control de inventario, reposición automática y ganancias
+
+Implementar un sistema de administración de inventario que permita controlar las existencias de cada producto, registrar las compras a proveedores, calcular las ganancias y avisar cuándo sea necesario reponer mercadería.
+
+El objetivo es evitar quedarse sin productos importantes, como las tintas de impresora, y llevar un control preciso del dinero invertido y ganado.
+
+1. Control de stock
+
+Cada producto deberá tener una cantidad de unidades disponibles registrada en el panel de administración.
+
+Por ejemplo, si llegan 10 tintas negras, el sistema deberá registrar el ingreso y actualizar el inventario. A medida que se vendan, la cantidad disponible deberá disminuir automáticamente.
+
+2. Alertas de stock bajo
+
+Se deberá poder establecer una cantidad mínima para cada producto.
+
+Por ejemplo, si hay 10 tintas negras y se establece un mínimo de 2 unidades, el sistema deberá enviar una alerta cuando el inventario llegue a ese nivel.
+
+La alerta podrá enviarse por WhatsApp a la persona encargada de realizar los pedidos a proveedores, utilizando una integración autorizada con WhatsApp.
+
+El mensaje podría indicar qué producto necesita reposición y cuántas unidades quedan disponibles.
+
+3. Registro de compras a proveedores
+
+Desde el panel de administración se deberá poder registrar cada reposición, incluyendo:
+
+Producto y cantidad solicitada.
+Proveedor al que se realizó el pedido.
+Costo unitario y costo total de la compra.
+Cantidad de unidades que había antes de recibir el pedido.
+Cantidad de unidades que ingresaron.
+Cantidad final disponible después del ingreso.
+Fecha de compra y recepción de la mercadería.
+
+El sistema deberá actualizar automáticamente las existencias al registrar la recepción de los productos, evitando confundir las unidades solicitadas con las efectivamente recibidas.
+
+4. Control de ventas y ganancias
+
+El panel de administración deberá mostrar cuánto se vendió, cuánto costaron los productos vendidos y cuál fue la ganancia obtenida.
+
+Se deberá diferenciar entre facturación total, costo de mercadería y ganancia bruta. También se podrán registrar otros gastos para calcular una ganancia neta estimada.
+
+Los cálculos deberán basarse en las ventas, los costos y los movimientos reales registrados en el sistema.
+
+Importante: el objetivo es centralizar el control del inventario, automatizar las alertas de reposición y conocer con mayor precisión la situación económica del negocio.
+
+IDEA 3 — Referencias para el catálogo de productos
+
+Utilizar los siguientes enlaces como referencias para la presentación, búsqueda y descripción de productos de impresión.
+
+Ejemplo de búsqueda de productos:
+
+https://www.elit.com.ar/buscar?search=tinta%20impresora
+
+Ejemplo de página individual de producto:
+
+https://www.elit.com.ar/producto/17185-botella-de-tinta-epson-574-magenta
+
+Estas páginas podrán servir como referencia para organizar la información de los artículos, identificar sus características técnicas y mejorar la presentación del catálogo propio.
+
+Se deberá prestar especial atención a datos como marca, modelo, color, capacidad, compatibilidad, presentación y precio.
+
+Importante: los enlaces son referencias de consulta. La información deberá incorporarse al catálogo propio de manera autorizada y verificando que sea correcta y esté actualizada. No se deberá asumir que los precios, las existencias o las condiciones comerciales de esos sitios se encuentran disponibles para nuestra tienda.
+
+IDEA 4 — Organización de los productos por categorías
+
+Separar todos los artículos del catálogo en categorías y subcategorías para facilitar la navegación y permitir que los clientes encuentren rápidamente lo que necesitan.
+
+Las categorías principales podrán incluir:
+
+Tintas.
+Cartuchos.
+Impresoras.
+Toners.
+Insumos de impresión.
+Accesorios.
+Repuestos.
+Otros productos disponibles en el negocio.
+
+Cada artículo deberá estar asociado a su categoría correspondiente. También se podrán crear subcategorías para ordenar mejor los productos.
+
+Por ejemplo, dentro de “Tintas” se podrán encontrar las secciones “Tintas Epson”, “Tintas HP”, “Tintas Canon” y otras marcas que comercialice el negocio.
+
+Desde el panel de administración se deberán poder crear, editar, eliminar y reorganizar categorías, así como asignar productos a cada una.
+
+Objetivo: conseguir un catálogo ordenado, fácil de recorrer y preparado para incorporar nuevos productos sin que la página se vuelva confusa.
+
+IDEA 5 — Productos más vendidos, más baratos y más caros por categoría
+
+Agregar funciones que permitan destacar los productos más relevantes de cada sección del catálogo.
+
+Dentro de cada categoría se deberán poder identificar:
+
+Más vendido: el producto con mayor cantidad de unidades vendidas durante el período seleccionado.
+Más barato: el artículo con el menor precio entre los productos disponibles de esa categoría.
+Más caro: el artículo con el mayor precio entre los productos disponibles de esa categoría.
+
+Estas clasificaciones deberán actualizarse según la información real del catálogo y las ventas registradas.
+
+También se deberá incorporar un buscador que permita encontrar productos por nombre, marca, modelo o palabras relacionadas.
+
+Por ejemplo, cuando el usuario escriba “tinta”, el sistema deberá mostrar los productos que coincidan con la búsqueda y permitirle acceder a la categoría correspondiente.
+
+Se podrán agregar filtros por precio, marca, disponibilidad y tipo de producto para facilitar aún más la búsqueda.
+
+Importante: las clasificaciones deberán basarse en datos reales. Se deberá definir un período para las ventas, por ejemplo, los últimos 30 días, y excluir de los listados de precios los productos que no estén disponibles cuando corresponda.
+
+Objetivo: ayudar a los clientes a comparar alternativas, descubrir productos populares y encontrar opciones adecuadas a su presupuesto.
+
+IDEA 6 — Calificaciones de productos
+
+ESTADO: NO IMPLEMENTAR POR AHORA.
+
+A futuro, se podrá incorporar un sistema de calificaciones mediante estrellas para mostrar una valoración de los productos en función de su relación calidad-precio, las opiniones de los compradores y otros indicadores relevantes.
+
+La idea original es mostrar puntuaciones entre 4 y 5 estrellas para destacar los artículos y transmitir confianza.
+
+Sin embargo, no se deberán presentar puntuaciones como si fueran opiniones reales cuando no existan datos suficientes que las respalden. Si se decide implementar esta función más adelante, será necesario definir cómo se calcula la puntuación y distinguir las opiniones verificadas de otros indicadores comerciales.
+
+Por el momento, esta funcionalidad queda pendiente y no deberá desarrollarse hasta que se decida avanzar con ella.
+
+IDEA 7 — Fondos visuales según la categoría seleccionada
+
+Implementar un diseño visual dinámico en el que el fondo o los elementos decorativos de la página cambien según la categoría que esté visitando el usuario.
+
+Por ejemplo, cuando el cliente ingrese a la sección de impresoras, podrá encontrar un fondo ilustrativo relacionado con impresoras. Si ingresa a la sección de tintas, se podrá utilizar una imagen o composición visual relacionada con los insumos de impresión.
+
+El diseño deberá mantener una identidad visual coherente con la marca, sin perjudicar la lectura de los textos, la visibilidad de los precios ni la navegación.
+
+Las imágenes deberán utilizarse principalmente como fondos decorativos, evitando que compitan visualmente con los productos y sus fotografías.
+
+También se deberá optimizar su tamaño para que la página cargue rápidamente y se adapte correctamente a computadoras, tablets y celulares.
+
+Objetivo: conseguir una página más atractiva, moderna y visualmente relacionada con cada sección, evitando que todo el catálogo tenga una apariencia blanca y genérica.
+
+IDEA 8 — Modo claro y modo oscuro
+
+Agregar una opción que permita al usuario elegir entre un tema claro y un tema oscuro para navegar por la página.
+
+El modo claro utilizará fondos claros y textos oscuros, mientras que el modo oscuro utilizará fondos oscuros y textos claros, manteniendo una buena legibilidad.
+
+La selección deberá aplicarse de manera coherente a todas las secciones de la página, incluyendo el catálogo, las categorías, las fichas de producto, el buscador, el carrito y los formularios.
+
+Se deberá incluir un botón visible para cambiar de tema. También se podrá guardar la preferencia del usuario para que se mantenga cuando vuelva a ingresar a la página.
+
+Los colores de los botones, los precios, los descuentos y los mensajes deberán adaptarse al tema elegido, conservando el contraste necesario para leer la información.
+
+Objetivo: mejorar la comodidad de navegación y ofrecer una experiencia más personalizable y moderna.
+
+IDEA 9 — Sección exclusiva de ofertas
+
+Crear una sección independiente dentro de la página web dedicada a mostrar los productos que tengan descuentos o promociones activas.
+
+Esta sección deberá estar accesible desde el menú principal y tener un diseño visual llamativo que permita identificar fácilmente las oportunidades de compra.
+
+Cada producto podrá mostrarse mediante una tarjeta que incluya:
+
+Fotografía del artículo.
+Nombre y marca.
+Precio original.
+Precio promocional.
+Porcentaje de descuento.
+Disponibilidad.
+Botón para ver el producto o agregarlo al carrito.
+
+Se podrán destacar las promociones mediante etiquetas como “Oferta”, “Precio especial” o “Descuento destacado”.
+
+Desde el panel de administración se deberá poder seleccionar qué productos aparecen en esta sección, configurar sus precios promocionales y establecer las condiciones de cada oferta.
+
+La sección deberá actualizarse automáticamente para mostrar las promociones vigentes y retirar aquellas que hayan finalizado.
+
+Objetivo: concentrar las ofertas en un único lugar, aumentar su visibilidad y facilitar que los clientes encuentren productos con precios promocionales.
+
+IDEA 10 — Ofertas por tiempo limitado con contador regresivo
+
+Complementar la sección de ofertas con un sistema de promociones que tengan una fecha y hora de finalización definidas.
+
+Cada producto con una promoción temporal deberá mostrar el precio original, el precio con descuento, el porcentaje de ahorro y el tiempo restante para que finalice la oferta.
+
+Por ejemplo:
+
+“¡Oferta por tiempo limitado! Llevate este producto a $5.000 en lugar de $6.500. La promoción termina en 02:35:40”.
+
+Se deberá incorporar un contador regresivo que muestre las horas, los minutos y los segundos restantes. El contador deberá actualizarse automáticamente y finalizar exactamente cuando venza la promoción configurada.
+
+Desde el panel de administración se deberá poder establecer:
+
+Producto que participará de la promoción.
+Precio original y precio promocional.
+Porcentaje de descuento.
+Fecha y hora de inicio.
+Fecha y hora de finalización.
+Cantidad disponible para la promoción, si corresponde.
+
+Cuando finalice la promoción, el sistema deberá retirar el descuento y volver a mostrar el precio habitual, salvo que se haya configurado otra oferta válida.
+
+Las ofertas temporales también podrán aparecer en la sección de la IDEA 9, de manera que ambas funcionalidades trabajen juntas.
+
+Importante: el contador deberá representar un plazo real. No se deberán reiniciar artificialmente los tiempos ni inventar descuentos o mensajes de urgencia.
+
+Objetivo: incentivar las compras durante las promociones mediante oportunidades reales y limitadas, aumentando el interés en los productos sin perjudicar la confianza de los clientes.
+
+IDEA 11 — Menú de navegación por categorías
+
+Implementar un menú de navegación inspirado en la organización de categorías de Mercado Libre, adaptado a la identidad visual y las necesidades del negocio propio.
+
+La página deberá contar con una barra de navegación ubicada en la parte superior que permita acceder rápidamente a las principales secciones del catálogo.
+
+Al seleccionar la opción “Categorías”, se deberá desplegar un menú con las categorías principales y sus respectivas subcategorías.
+
+Por ejemplo:
+
+Tintas.
+Tintas Epson.
+Tintas HP.
+Tintas Canon.
+Impresoras.
+Impresoras de tinta.
+Impresoras láser.
+Impresoras multifunción.
+Cartuchos y toners.
+Accesorios y repuestos.
+Otros insumos de impresión.
+
+La estructura deberá adaptarse a los productos que realmente comercialice el negocio.
+
+Además, la barra de navegación podrá incluir accesos directos a:
+
+Inicio: volver a la página principal.
+Categorías: recorrer las secciones del catálogo.
+Ofertas: acceder a las promociones activas.
+Más vendidos: consultar los productos con mayor cantidad de ventas.
+Novedades: descubrir los artículos incorporados recientemente.
+Ayuda: consultar información de contacto y asistencia al cliente.
+Carrito: acceder a los productos seleccionados para comprar.
+
+Cada opción deberá dirigir a la sección correspondiente. El menú deberá funcionar correctamente tanto en computadoras como en celulares, adaptándose a pantallas pequeñas mediante un menú desplegable o lateral.
+
+Desde el panel de administración se deberán poder gestionar las categorías y sus relaciones con los productos.
+
+Objetivo: facilitar la navegación, mejorar la organización del catálogo y permitir que los clientes encuentren rápidamente los artículos que buscan.
+
+IDEA 12 — Página individual con información detallada de cada producto
+
+Implementar una ficha de producto completa, inspirada en la presentación de artículos de Mercado Libre, pero adaptada al catálogo propio.
+
+Cada artículo deberá contar con una página individual que reúna toda la información necesaria para que el cliente conozca sus características, compare alternativas y tome una decisión de compra.
+
+1. Nombre, estado y popularidad
+
+En la parte superior se mostrará el nombre completo del producto, su marca, modelo y estado, cuando corresponda.
+
+También se podrán mostrar etiquetas como “Nuevo”, “Destacado” o “Más vendido”, siempre que estén justificadas por la información real del sistema.
+
+2. Calificaciones y opiniones
+
+La página podrá incorporar calificaciones por estrellas y opiniones de los compradores cuando se decida implementar la funcionalidad de la IDEA 6.
+
+Las puntuaciones deberán calcularse a partir de datos reales y no deberán presentarse como opiniones verificadas si no lo son.
+
+Esta función queda sujeta a la decisión de implementación de la IDEA 6.
+
+3. Precio y descuentos
+
+El precio deberá mostrarse de manera destacada, en pesos argentinos y con los decimales correspondientes cuando sea necesario.
+
+Cuando exista una promoción, se podrá mostrar el precio anterior, el precio promocional y el ahorro correspondiente, de acuerdo con las reglas de las IDEAS 9 y 10.
+
+También se podrá mostrar el precio por unidad, litro, kilogramo o mililitro cuando resulte útil para comparar productos.
+
+Los impuestos, cargos y condiciones relevantes deberán comunicarse de forma clara.
+
+4. Características técnicas
+
+Cada producto deberá contar con una descripción y una ficha técnica que incluyan los datos más importantes.
+
+Por ejemplo, para una tinta de impresora se podrán indicar:
+
+Marca y modelo.
+Color.
+Capacidad en mililitros.
+Tipo de tinta.
+Compatibilidad con impresoras.
+Presentación y cantidad de unidades.
+Garantía y condiciones aplicables, cuando corresponda.
+
+La información deberá organizarse en un resumen de características principales y una sección ampliada para consultar todos los detalles.
+
+5. Fotografías del producto
+
+Se deberán mostrar imágenes claras del artículo, con la posibilidad de consultar diferentes vistas cuando existan varias fotografías.
+
+Las imágenes deberán corresponder al producto publicado y mantener una presentación coherente en todo el catálogo.
+
+6. Opciones de compra
+
+Si existen diferentes presentaciones o variantes, el cliente deberá poder seleccionarlas desde la ficha del producto.
+
+Por ejemplo, podrá elegir entre una botella de tinta individual, un paquete de varias unidades o un conjunto de tintas de distintos colores.
+
+Las opciones disponibles deberán estar vinculadas con sus precios y existencias correspondientes.
+
+7. Productos relacionados
+
+Se podrán mostrar artículos relacionados o complementarios.
+
+Por ejemplo, al consultar una impresora se podrán sugerir tintas compatibles, cartuchos o accesorios.
+
+Las sugerencias deberán tener relación real con el producto consultado para resultar útiles al cliente.
+
+8. Medios de pago y condiciones
+
+La ficha podrá incluir información sobre los medios de pago aceptados, las cuotas disponibles si corresponden, las condiciones de compra, las opciones de envío y los tiempos estimados de entrega.
+
+Toda la información deberá reflejar las condiciones reales del negocio.
+
+Objetivo: ofrecer una ficha de producto completa y profesional, que permita consultar las características del artículo sin depender de información externa y facilite la decisión de compra.
+
+IDEA 13 — Envíos, control de stock, selección de cantidad y carrito de compras
+
+Implementar en cada página de producto una sección que permita al cliente consultar las condiciones de entrega, conocer la disponibilidad, seleccionar la cantidad deseada y agregar los artículos al carrito.
+
+Esta funcionalidad deberá integrarse con el inventario de la IDEA 2 y con las fichas de producto de la IDEA 12.
+
+1. Fecha estimada de entrega
+
+Debajo del precio se deberá mostrar una estimación de cuándo llegará el pedido.
+
+Por ejemplo:
+
+“Llega mañana”.
+“Llega entre el jueves 15 y el viernes 16”.
+
+La estimación deberá calcularse según la ubicación del cliente, el método de envío, los horarios de despacho y las condiciones reales del servicio.
+
+También se podrá mostrar un mensaje que indique cuánto tiempo queda para comprar y acceder a una fecha estimada de despacho.
+
+Por ejemplo: “Comprando dentro de las próximas 2 horas y 30 minutos”.
+
+El plazo deberá calcularse automáticamente y no deberá confundirse con una garantía de entrega si el servicio no puede asegurarla.
+
+2. Detalles y formas de entrega
+
+Se deberá incluir una opción como “Más detalles y formas de entrega” para consultar las alternativas disponibles.
+
+Se podrán mostrar:
+
+Envío a domicilio.
+Retiro en el local, si está disponible.
+Costos de envío.
+Plazos estimados de entrega.
+Cobertura según la localidad del cliente.
+
+Los costos y tiempos deberán corresponder a las opciones de entrega que realmente ofrezca el negocio.
+
+3. Stock disponible
+
+La página deberá mostrar claramente cuántas unidades hay disponibles.
+
+Por ejemplo: “Stock disponible” o “Quedan 12 unidades”.
+
+La cantidad deberá estar vinculada al inventario del panel de administración. Cuando se reciban productos, se registren ventas o se realicen ajustes, las existencias deberán actualizarse.
+
+Si el producto no tiene stock, el sistema deberá impedir que se agreguen unidades inexistentes y mostrar un mensaje informativo.
+
+4. Selector de cantidad
+
+Se deberá incorporar un selector que permita elegir cuántas unidades desea comprar el cliente.
+
+El sistema deberá comprobar que la cantidad seleccionada no supere las existencias disponibles y actualizar el subtotal automáticamente.
+
+Por ejemplo, si el cliente selecciona 3 unidades de un producto que cuesta $5.000, el subtotal correspondiente será de $15.000.
+
+Si no hay suficientes unidades, se deberá mostrar un aviso y limitar la cantidad permitida.
+
+5. Botón “Agregar al carrito”
+
+Debajo del selector de cantidad se deberá incorporar un botón destacado con el texto “Agregar al carrito”.
+
+Al presionarlo, el producto deberá agregarse al carrito con su variante, cantidad y precio correspondientes.
+
+El cliente deberá poder continuar navegando por la tienda sin perder los artículos seleccionados.
+
+También se podrá mostrar una confirmación visual y un indicador con la cantidad de artículos que contiene el carrito.
+
+Si se agrega nuevamente un producto que ya está en el carrito, se deberá actualizar su cantidad cuando corresponda, sin generar duplicaciones innecesarias.
+
+6. Resumen del carrito
+
+El carrito deberá mostrar:
+
+Imagen y nombre del producto.
+Precio unitario.
+Cantidad seleccionada.
+Subtotal de cada artículo.
+Descuentos aplicables.
+Costo de envío, cuando pueda calcularse.
+Total estimado de la compra.
+
+El usuario deberá poder modificar cantidades o eliminar artículos. El sistema deberá actualizar los importes automáticamente.
+
+7. Sincronización con el inventario
+
+Antes de confirmar la compra, el sistema deberá verificar nuevamente los precios, las promociones vigentes y la disponibilidad de cada artículo.
+
+Agregar un producto al carrito no deberá descontar definitivamente las existencias, salvo que exista un sistema de reservas temporales.
+
+El descuento definitivo del stock deberá realizarse según las reglas del proceso de compra, evitando ventas de productos que ya no estén disponibles.
+
+Importante: las fechas de entrega, los costos, los precios y las existencias deberán basarse en información real y mantenerse sincronizados con el sistema de administración.
+
+Objetivo: simplificar la compra, reducir errores de stock y permitir que los clientes seleccionen sus productos y continúen al proceso de pago de manera clara y segura.
+
+ORGANIZACIÓN GENERAL DEL PROYECTO
+
+Para evitar duplicaciones y facilitar el desarrollo, las funcionalidades deberán trabajar de manera integrada.
+
+Catálogo y navegación
+
+Las IDEAS 3, 4, 5, 7, 8 y 11 definen la organización, la presentación visual, la búsqueda y la navegación del catálogo.
+
+Administración e inventario
+
+La IDEA 2 centraliza el control de existencias, las reposiciones, las alertas y el seguimiento económico del negocio.
+
+Página del producto y compra
+
+Las IDEAS 12 y 13 definen la información que verá el cliente, la disponibilidad, las entregas, la selección de cantidades y el carrito.
+
+Promociones
+
+Las IDEAS 9 y 10 deben funcionar juntas: la IDEA 9 crea el espacio donde se muestran las ofertas y la IDEA 10 administra las promociones temporales y sus contadores.
+
+Funcionalidades pendientes
+
+La IDEA 6 queda expresamente postergada. Su implementación se evaluará más adelante.
+
+La IDEA 1 se aplica al registro de datos de contacto y deberá integrarse con los formularios correspondientes.
+
+PRIORIDADES RECOMENDADAS
+
+Primera etapa: organizar el catálogo, implementar categorías y buscador, y conectar los productos con el panel de administración y el inventario.
+
+Segunda etapa: desarrollar las fichas individuales de productos, el carrito, la selección de cantidades y las reglas de stock.
+
+Tercera etapa: incorporar la sección de ofertas, los descuentos temporales y el contador regresivo.
+
+Cuarta etapa: mejorar la presentación visual con fondos por categoría y temas claro y oscuro.
+
+Quinta etapa: integrar las alertas de reposición por WhatsApp, los reportes económicos y la validación telefónica.
+
+Pendiente: evaluar e implementar las calificaciones de productos cuando exista una estrategia definida para calcularlas y mostrarlas correctamente.
+
+El orden definitivo deberá ajustarse al estado actual de la página, las funcionalidades que ya estén desarrolladas y los recursos disponibles.
+
+CONDICIONES GENERALES
+
+Todas las funcionalidades deberán integrarse en un mismo sistema, evitando que el catálogo, los precios, las ofertas y el inventario manejen información contradictoria.
+
+Los datos deberán almacenarse correctamente y actualizarse cuando corresponda. La información mostrada al cliente deberá ser coherente con la registrada en el panel de administración.
+
+El diseño deberá ser adaptable a computadoras, tablets y celulares, mantener una navegación clara y priorizar la velocidad de carga, la accesibilidad y la seguridad.
+
+La referencia visual de Mercado Libre se utilizará únicamente como inspiración para la organización y la experiencia de compra. La tienda deberá conservar su propia identidad visual, marca y estructura comercial.
+
+Resultado esperado: desarrollar una tienda online profesional, con un catálogo organizado, un sistema de administración centralizado, control de inventario, promociones, páginas de producto completas y un proceso de compra sencillo, preparado para crecer a medida que el negocio incorpore nuevos artículos y funcionalidades.
+
